@@ -9,8 +9,11 @@ import { useState } from 'react';
 function App() {
 
   const [paginaActual, setPaginaActual] = useState(1)
+  const TOTAL_POR_PAGINA = 5
 
   let peliculas = peliculaJson;
+
+  peliculas = peliculas.slice((paginaActual - 1) * TOTAL_POR_PAGINA, paginaActual * TOTAL_POR_PAGINA)
 
   return (
     <PageWrapper>
